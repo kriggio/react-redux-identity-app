@@ -14,9 +14,9 @@ class HomePage extends React.Component {
         console.log(this.props);
         return (
             <div className="col-md-6 col-md-offset-3">
-                <h1>Hi {user.firstName}!</h1>
-                <p>You're logged in with React & JWT!!</p>
-                <h3>Users from secure api end point:</h3>
+                <h1>Hi {user.name.givenName}!</h1>
+                <p>You're logged in.</p>
+                <h3>All Users:</h3>
                 {users.loading && <em>Loading users...</em>}
                 {users.error && <span className="text-danger">ERROR: {users.error}</span>}
                 {users.items &&
@@ -29,7 +29,7 @@ class HomePage extends React.Component {
                     </ul>
                 }
                 <p>
-                    <Link to="/login">Logout</Link>
+                    <Link to="/login"><button className="btn btn-primary">Logout</button></Link>
                 </p>
             </div>
         );
